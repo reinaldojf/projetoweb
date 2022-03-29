@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class Empregado {
+	
+	private Integer Id;
 	private String cpf;
 	private String nome;
 	private float salariobase;
@@ -15,17 +17,35 @@ public abstract class Empregado {
 		this.salariobase = salariobase;
 		this.salariofinal = salariofinal;
 	}
+	public Integer getId() {
+		return Id;
+	}
+	public void setId(Integer id) {
+		Id = id;
+	}
 	public String getCpf() {
 		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getNome() {
 		return nome;
 	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public float getSalariobase() {
 		return salariobase;
 	}
+	public void setSalariobase(float salariobase) {
+		this.salariobase = salariobase;
+	}
 	public float getSalariofinal() {
 		return salariofinal;
+	}
+	public void setSalariofinal(float salariofinal) {
+		this.salariofinal = salariofinal;
 	}
 	@Override
 	public String toString() {

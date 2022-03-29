@@ -25,6 +25,7 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th>Id</th>
 						<th>cpf</th>
 						<th>Nome</th>
 						<th>Salário Base</th>
@@ -32,18 +33,21 @@
 						<th>Bônus de diretor</th>
 						<th>Auxílio vôo</th>
 						<th>Cartão Corporativo</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="o" items="${listagem}">
 						<tr>
-							<th>${o.cpf}</th>
-							<th>${o.nome}</th>
-							<th>${o.salariobase}</th>
-							<th>${o.salariofinal}</th>
-							<th>${o.bonusdiretor}</th>
-							<th>${o.auxiliovoo}</th>
-							<th>${o.cartaocorporativo}</th>
+							<td>${o.id}</td>
+							<td>${o.cpf}</td>
+							<td>${o.nome}</td>
+							<td>${o.salariobase}</td>
+							<td>${o.salariofinal}</td>
+							<td>${o.bonusdiretor}</td>
+							<td>${o.auxiliovoo}</td>
+							<td>${o.cartaocorporativo}</td>
+							<td><a href="/bebida/excluir/${o.id}">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
