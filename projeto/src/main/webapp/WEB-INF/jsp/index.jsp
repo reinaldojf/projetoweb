@@ -14,7 +14,7 @@
 	<p><a href="/gerentes">Cadastramento de gerente</a>
 	<p><a href="/analistas">Cadastramento de analista</a>
 	<p><a href="/clientes">Cadastramento de cliente</a>
-	<p><a href="/projeto">Cadastramento de projeto</a> 
+	<p><a href="/projetos">Cadastramento de projeto</a> 
 
 </body>
 </html>

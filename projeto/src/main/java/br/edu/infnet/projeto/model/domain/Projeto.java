@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Projeto {
+	private Integer Id;
 	private String codigo;
 	private String descricao;
 	private LocalDateTime datainicio;
@@ -14,17 +15,13 @@ public class Projeto {
 	public Projeto() {
 		datainicio = LocalDateTime.now();
 		descricao = "Projeto de consultoria";
+		empregados = null;
 	}
-	@Override
-	public String toString() {
-
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/mm/yyyy HH:mm");
-
-		return String.format("%s;%s;%d", 
-				codigo,
-				descricao,
-				datainicio.format(formato),
-				empregados.size());
+	public Integer getId() {
+		return Id;
+	}
+	public void setId(Integer id) {
+		Id = id;
 	}
 	public LocalDateTime getDatainicio() {
 		return datainicio;
@@ -53,5 +50,15 @@ public class Projeto {
 	public void setEmpregados(List<Empregado> empregados) {
 		this.empregados = empregados;
 	}
-	
+	@Override
+	public String toString() {
+
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/mm/yyyy HH:mm");
+
+		return String.format("%s;%s;%d", 
+				codigo,
+				descricao,
+				datainicio.format(formato),
+				empregados.size());
+	}
 }

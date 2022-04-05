@@ -21,7 +21,7 @@
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Nome:</label> <input type="text" class="form-control"
-					placeholder="Entre com o nome do diretor" name="nome" value="João">
+					placeholder="Entre com o nome do gerente" name="nome" value="João">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Salário Base:</label> <input type="text" class="form-control"
@@ -33,11 +33,11 @@
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Gratificação gerente:</label> <input type="text" class="form-control"
-					placeholder="Entre com o valor do bônus" name="gratificacaogerente" value="1000">
+					placeholder="Entre com a gratificação do gerente" name="gratificacaogerente" value="1000">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Auxílio gasolina:</label> <input type="text" class="form-control"
-					placeholder="Entre com o auxílio para vôo" name="auxiliogasolina" value="4000">
+					placeholder="Entre com o auxílio para gasolina" name="auxiliogasolina" value="4000">
 			</div>
 			<div class="mb-3 mt-3">
 				<div class="checkbox">

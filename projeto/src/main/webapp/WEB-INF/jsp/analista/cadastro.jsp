@@ -21,7 +21,7 @@
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Nome:</label> <input type="text" class="form-control"
-					placeholder="Entre com o nome do diretor" name="nome" value="João">
+					placeholder="Entre com o nome do analista" name="nome" value="João">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Salário Base:</label> <input type="text" class="form-control"
@@ -33,15 +33,15 @@
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Auxílio alimentação:</label> <input type="text" class="form-control"
-					placeholder="Entre com o valor do bônus" name="auxilioalimentacao" value="1000">
+					placeholder="Entre com o valor do auxílio alimentação" name="auxilioalimentacao" value="1000">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Auxílio transporte:</label> <input type="text" class="form-control"
-					placeholder="Entre com o auxílio para vôo" name="auxiliotransporte" value="4000">
+					placeholder="Entre com o auxílio transporte" name="auxiliotransporte" value="4000">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Auxílio escola:</label> <input type="text" class="form-control"
-					placeholder="Entre com o auxílio para vôo" name="auxilioescola" value="4000">
+					placeholder="Entre com o auxílio escola" name="auxilioescola" value="4000">
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
