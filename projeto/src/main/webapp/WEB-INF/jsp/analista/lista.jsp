@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastramento de diretor</title>
+<title>Cadastramento de analista</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -14,14 +14,14 @@
 </head>
 <body>
 	<div class="container mt-3">
-		<h2>Cadastramento de diretor</h2>
-		<form action="/diretor">
+		<h2>Cadastramento de analista</h2>
+		<form action="/analista">
 			<button type="submit" class="btn btn-primary">Novo</button>
 		</form>
 
 		<c:if test="${not empty listagem}">
 		
-			<p>Listagem de diretores (${listagem.size()}):</p>
+			<p>Listagem de analistas (${listagem.size()}):</p>
 			<table class="table">
 				<thead>
 					<tr>
@@ -30,9 +30,9 @@
 						<th>Nome</th>
 						<th>Salário Base</th>
 						<th>Salário Final</th>
-						<th>Bônus de diretor</th>
-						<th>Auxílio vôo</th>
-						<th>Cartão Corporativo</th>
+						<th>Auxílio alimentação</th>
+						<th>Auxílio Transporte</th>
+						<th>Auxílio escola</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -44,10 +44,10 @@
 							<td>${o.nome}</td>
 							<td>${o.salariobase}</td>
 							<td>${o.salariofinal}</td>
-							<td>${o.bonusdiretor}</td>
-							<td>${o.auxiliovoo}</td>
-							<td>${o.cartaocorporativo}</td>
-							<td><a href="/diretor/excluir/${o.id}">Excluir</a></td>
+							<td>${o.auxilioalimentacao}</td>
+							<td>${o.auxiliotransporte}</td>
+							<td>${o.auxilioescola}</td>
+							<td><a href="/analista/excluir/${o.id}">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

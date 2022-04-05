@@ -49,7 +49,7 @@ public class DiretorController {
 	}
 	
 	// 	/bebida/excluir/${o.id}
-	@GetMapping(value="/bebida/excluir/{id}")
+	@GetMapping(value="/diretor/excluir/{id}")
 	public String excluir(@PathVariable Integer id) {
 		
 		diretorService.excluir(id);
