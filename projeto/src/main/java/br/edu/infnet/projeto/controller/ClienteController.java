@@ -35,7 +35,7 @@ public class ClienteController {
 		
 		model.addAttribute("listagem", clienteService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) clientes
 		
-		return "/cliente/lista"; // Chama a tela de cadastro de cliente
+		return "cliente/lista"; // Chama a tela de cadastro de cliente
 	}
 
 	// cliente/incluir
