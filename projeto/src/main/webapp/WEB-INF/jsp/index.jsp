@@ -7,7 +7,7 @@
 <title>Administração de projetos</title>
 </head>
 <body>
-	<h3>Reinaldo Freitas</h3>
+	<h3>${usuarioLogado.nome}</h3>
 	<h4>AppProjeto: Sistema para administração de projetos</h4>
 	
 	<p><a href="/diretores">Cadastramento de diretor</a>
