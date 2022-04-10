@@ -17,6 +17,11 @@ public class AcessoController {
 	private UsuarioService usuarioService;
 	
 	@GetMapping(value = "/") // Acessado automaticamente quando entrar na raiz do site - localhost:8080
+	public String telaIndex() {
+		return "index"; // Chama a tela de login
+	}
+
+	@GetMapping(value = "/login") // Acessado automaticamente quando entrar na raiz do site - localhost:8080
 	public String telaLogin() {
 		return "login"; // Chama a tela de login
 	}
