@@ -29,7 +29,7 @@
 						<th>Código</th>
 						<th>Descrição</th>
 						<th>Data início</th>
-						<th>Cliente</th>
+						<!--  <th>Cliente</th> -->
 						<th></th>
 					</tr>
 				</thead>
@@ -40,7 +40,7 @@
 							<td>${o.codigo}</td>
 							<td>${o.descricao}</td>
 							<td>${o.datainicio}</td>
-							<td>${o.cliente}</td>
+							<!-- <td>${o.cliente}</td> -->
 							<td><a href="/projeto/excluir/${o.id}">Excluir</a></td>
 						</tr>
 					</c:forEach>

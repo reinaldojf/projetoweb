@@ -15,6 +15,7 @@ public class Projeto {
 	public Projeto() {
 		datainicio = LocalDateTime.now();
 		descricao = "Projeto de consultoria";
+		cliente = null;
 		empregados = null;
 	}
 	public Integer getId() {
@@ -55,10 +56,9 @@ public class Projeto {
 
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/mm/yyyy HH:mm");
 
-		return String.format("%s;%s;%d", 
+		return String.format("%s;%s;%s", 
 				codigo,
 				descricao,
-				datainicio.format(formato),
-				empregados.size());
+				datainicio.format(formato));
 	}
 }

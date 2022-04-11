@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,22 +15,24 @@
 		<form action="/projeto/incluir" method="post">
 			<div class="mb-3 mt-3">
 				<label>Código:</label> <input type="text" class="form-control"
-					placeholder="Entre com o código" name="codigo" value="111.111.111-11">
+					placeholder="Entre com o código" name="codigo"
+					value="111.111.111-11">
 			</div>
 			<div class="mb-3 mt-3">
 				<label>Descrição:</label> <input type="text" class="form-control"
 					placeholder="Entre com a descrição" name="descricao" value="João">
 			</div>
-<!-- 		<div class="mb-3 mt-3">
+<!--  		<div class="mb-3 mt-3">
 				<label>Data início:</label> <input type="text" class="form-control"
-					placeholder="Entre com a data de início" name="datainicio" value="2020-01-01">
-			</div> 
--->
+					placeholder="Entre com a data de início" name="datainicio"
+					value="2020-01-01">
+			</div>
+
 			<div class="mb-3 mt-3">
 				<label>Código do cliente:</label> <input type="text" class="form-control"
 					placeholder="Entre com o código do cliente" name="cliente" value="120">
 			</div>
-<!--  		<div class="mb-3 mt-3">
+	  		<div class="mb-3 mt-3">
 				<label>Empregados:</label> <input type="text" class="form-control"
 					placeholder="Entre com os empregados" name="empregados" value="">
 			</div>
