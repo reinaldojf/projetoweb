@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.projeto.model.domain.Cliente;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.repository.ClienteRepository;
 
 @Service
@@ -20,16 +21,18 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
-	public Collection<Cliente> obterLista(){
+	public Collection<Cliente> obterLista(Usuario usuario){
 		//return mapa.values();
-		return (Collection<Cliente>) clienteRepository.findAll(); // Vai trazer uma coleção de solicitante
+		return (Collection<Cliente>) clienteRepository.findAll(usuario.getId()); // Vai trazer uma coleção de solicitante
 	}
+	
 	// Incluir
 	public void incluir(Cliente cliente){
 //		cliente.setId(key++);
 //		mapa.put(cliente.getId(),  cliente);
 		clienteRepository.save(cliente);
 	}
+	
 	// Excluir
 	public void excluir(Integer id){
 //		mapa.remove(id);

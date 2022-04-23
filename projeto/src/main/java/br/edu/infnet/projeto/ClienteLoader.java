@@ -27,6 +27,7 @@ public class ClienteLoader implements ApplicationRunner{
 		cliente.setCnpj("111.111.111-11");
 		cliente.setEmail("acme@acme.com.br");
 		cliente.setRazaosocial("ACME Ltda");
+		
 		cliente.setUsuario(usuario);
 		
 		clienteService.incluir(cliente);

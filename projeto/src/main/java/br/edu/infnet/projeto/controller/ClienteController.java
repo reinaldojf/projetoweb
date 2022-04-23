@@ -32,10 +32,10 @@ public class ClienteController {
 	}
 
 	@GetMapping(value = "/clientes") // Identifica quando vem da página /clientes via o método get
-	public String lista(Model model) {
+	public String lista(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {
 		// Não precisa informar abaixo WEB-INF/jsp/cliente/cadastro.jsp pq o prefix e o suffix resolvem o que está faltando
 		
-		model.addAttribute("listagem", clienteService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) clientes
+		model.addAttribute("listagem", clienteService.obterLista(usuario)); // Passa a informação listagem para a página (ou tmabém chamado de rota) clientes
 		
 		return "cliente/lista"; // Chama a tela de cadastro de cliente
 	}
