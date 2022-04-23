@@ -1,9 +1,13 @@
 package br.edu.infnet.projeto.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +20,16 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private boolean admin;
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Cliente> solicitantes;
 	
+	public List<Cliente> getSolicitantes() {
+		return solicitantes;
+	}
+	public void setSolicitantes(List<Cliente> solicitantes) {
+		this.solicitantes = solicitantes;
+	}
 	public Integer getId() {
 		return id;
 	}

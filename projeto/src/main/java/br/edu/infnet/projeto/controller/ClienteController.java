@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.projeto.model.domain.Cliente;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.ClienteService;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,10 +42,11 @@ public class ClienteController {
 
 	// cliente/incluir
 	@PostMapping(value = "/cliente/incluir")
-	public String incluir(Model model, Cliente cliente) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
+	public String incluir(Model model, Cliente cliente, @SessionAttribute("usuarioLogado") Usuario usuario) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
 
 		//System.out.println("Cliente cadastrado: " + cliente);
 		// model.addAttribute("listagem", clienteService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) clientes
+		cliente.setUsuario(usuario);
 		clienteService.incluir(cliente);
 		return "redirect:/clientes";
 	}
