@@ -1,10 +1,23 @@
 package br.edu.infnet.projeto.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+@Table(name="TDiretor")
 public class Diretor extends Empregado {
 	private float bonusdiretor;
 	private float auxiliovoo;
 	private boolean cartaocorporativo;
 
+	public Diretor() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Diretor(String cpf, String nome, float salariobase, float salariofinal) {
 		super(cpf, nome, salariobase, salariofinal);
 	}

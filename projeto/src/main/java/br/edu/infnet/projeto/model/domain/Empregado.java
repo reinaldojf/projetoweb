@@ -3,13 +3,30 @@ package br.edu.infnet.projeto.model.domain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="TEmpregado")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Empregado {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Integer Id;
 	private String cpf;
 	private String nome;
 	private float salariobase;
 	private float salariofinal;
+
+	public Empregado() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Empregado(String cpf, String nome, float salariobase, float salariofinal) {
 		this.cpf = cpf;
