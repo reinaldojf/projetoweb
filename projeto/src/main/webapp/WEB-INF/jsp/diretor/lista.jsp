@@ -6,13 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Cadastramento de diretor</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/> 	
+	
 	<div class="container mt-3">
 		<h2>Cadastramento de diretor</h2>
 		<form action="/diretor">
