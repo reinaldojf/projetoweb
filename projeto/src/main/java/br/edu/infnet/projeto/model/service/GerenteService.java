@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.projeto.model.domain.Gerente;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.repository.GerenteRepository;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class GerenteService {
@@ -19,9 +21,9 @@ public class GerenteService {
 	private GerenteRepository gerenteRepository;
 
 	
-	public Collection<Gerente> obterLista(){
+	public Collection<Gerente> obterLista(Usuario usuario){
 //		return mapa.values();
-		return (Collection<Gerente>) gerenteRepository.findAll();
+		return (Collection<Gerente>) gerenteRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 	// Incluir
 	public void incluir(Gerente gerente){

@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.projeto.model.domain.Gerente;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.GerenteService;
 
 @Order(4)
@@ -18,6 +19,9 @@ public class GerenteLoader implements ApplicationRunner{
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+
 		Gerente gerente = new Gerente();
 		gerente.setCpf("999.999.999-99");
 		gerente.setNome("xxx");
@@ -26,6 +30,7 @@ public class GerenteLoader implements ApplicationRunner{
 		gerente.setAuxiliogasolina(200);;
 		gerente.setGratificacaogerente(500);
 		gerente.setParticipacaolucros(false);
+		gerente.setUsuario(usuario);
 		gerenteService.incluir(gerente);
 	}
 	

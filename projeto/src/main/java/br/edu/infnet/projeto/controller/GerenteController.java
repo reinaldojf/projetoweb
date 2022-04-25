@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.projeto.model.domain.Gerente;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.GerenteService;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,20 +32,21 @@ public class GerenteController {
 	}
 
 	@GetMapping(value = "/gerentes") // Identifica quando vem da página /gerentes via o método get
-	public String lista(Model model) {
+	public String lista(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {
 		// Não precisa informar abaixo WEB-INF/jsp/gerente/cadastro.jsp pq o prefix e o suffix resolvem o que está faltando
 		
-		model.addAttribute("listagem", gerenteService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) gerentes
+		model.addAttribute("listagem", gerenteService.obterLista(usuario)); // Passa a informação listagem para a página (ou tmabém chamado de rota) gerentes
 		
 		return "/gerente/lista"; // Chama a tela de cadastro de gerente
 	}
 
 	// gerente/incluir
 	@PostMapping(value = "/gerente/incluir")
-	public String incluir(Model model, Gerente gerente) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
+	public String incluir(Model model, Gerente gerente, @SessionAttribute("usuarioLogado") Usuario usuario) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
 
 		//System.out.println("Gerente cadastrado: " + gerente);
 		// model.addAttribute("listagem", gerenteService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) gerentes
+		gerente.setUsuario(usuario);
 		gerenteService.incluir(gerente);
 		return "redirect:/gerentes";
 	}

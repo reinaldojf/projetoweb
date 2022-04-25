@@ -29,7 +29,8 @@ public class DiretorLoader implements ApplicationRunner{
 		diretor.setSalariofinal(15000);
 		diretor.setAuxiliovoo(1000);
 		diretor.setBonusdiretor(5000);
-		diretor.setCartaocorporativo(false);;
+		diretor.setCartaocorporativo(false);
+		diretor.setUsuario(usuario);
 		diretorService.incluir(diretor);
 	}
 	
