@@ -22,13 +22,22 @@ public class Usuario {
 	private boolean admin;
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
-	private List<Cliente> solicitantes;
+	private List<Cliente> clientes;
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Empregado> empregados;
 	
-	public List<Cliente> getSolicitantes() {
-		return solicitantes;
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
-	public void setSolicitantes(List<Cliente> solicitantes) {
-		this.solicitantes = solicitantes;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	public List<Empregado> getEmpregados() {
+		return empregados;
+	}
+	public void setEmpregados(List<Empregado> empregados) {
+		this.empregados = empregados;
 	}
 	public Integer getId() {
 		return id;

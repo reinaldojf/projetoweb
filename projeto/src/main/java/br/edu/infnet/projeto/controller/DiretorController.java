@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.projeto.model.domain.Diretor;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.DiretorService;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,20 +32,22 @@ public class DiretorController {
 	}
 
 	@GetMapping(value = "/diretores") // Identifica quando vem da página /diretores via o método get
-	public String lista(Model model) {
+	public String lista(Model model, @SessionAttribute("usuarioLogado") Usuario usuario) {
 		// Não precisa informar abaixo WEB-INF/jsp/diretor/cadastro.jsp pq o prefix e o suffix resolvem o que está faltando
 		
-		model.addAttribute("listagem", diretorService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) diretores
+		model.addAttribute("listagem", diretorService.obterLista(usuario)); // Passa a informação listagem para a página (ou tmabém chamado de rota) diretores
 		
 		return "/diretor/lista"; // Chama a tela de cadastro de diretor
 	}
 
 	// diretor/incluir
 	@PostMapping(value = "/diretor/incluir")
-	public String incluir(Model model, Diretor diretor) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
+	public String incluir(Model model, Diretor diretor, @SessionAttribute("usuarioLogado") Usuario usuario) { // Usa o conceito de reflexão, pois recebe automaticamente os campos do formulário
 
 		//System.out.println("Diretor cadastrado: " + diretor);
 		// model.addAttribute("listagem", diretorService.obterLista()); // Passa a informação listagem para a página (ou tmabém chamado de rota) diretores
+		
+		diretor.setUsuario(usuario);
 		diretorService.incluir(diretor);
 		return "redirect:/diretores";
 	}

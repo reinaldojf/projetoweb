@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.projeto.model.domain.Analista;
 import br.edu.infnet.projeto.model.service.AnalistaService;
 
-@Order(3)
+@Order(5)
 @Component
 public class AnalistaLoader implements ApplicationRunner{
 	

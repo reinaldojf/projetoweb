@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -23,6 +25,9 @@ public abstract class Empregado {
 	private String nome;
 	private float salariobase;
 	private float salariofinal;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 
 	public Empregado() {
 		// TODO Auto-generated constructor stub
@@ -64,6 +69,14 @@ public abstract class Empregado {
 	public void setSalariofinal(float salariofinal) {
 		this.salariofinal = salariofinal;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

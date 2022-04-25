@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.projeto.model.domain.Diretor;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.DiretorService;
 
 @Order(3)
@@ -18,6 +19,9 @@ public class DiretorLoader implements ApplicationRunner{
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		Diretor diretor = new Diretor();
 		diretor.setCpf("999.999.999-99");
 		diretor.setNome("xxx");
