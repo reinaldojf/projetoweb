@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.projeto.model.domain.Analista;
+import br.edu.infnet.projeto.model.domain.Usuario;
 import br.edu.infnet.projeto.model.service.AnalistaService;
 
 @Order(5)
@@ -18,6 +19,9 @@ public class AnalistaLoader implements ApplicationRunner{
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+
 		Analista analista = new Analista();
 		analista.setCpf("999.999.999-99");
 		analista.setNome("xxx");
@@ -26,6 +30,7 @@ public class AnalistaLoader implements ApplicationRunner{
 		analista.setAuxilioalimentacao(300);
 		analista.setAuxilioescola(300);
 		analista.setAuxiliotransporte(300);
+		analista.setUsuario(usuario);
 		analistaService.incluir(analista);
 	}
 	
