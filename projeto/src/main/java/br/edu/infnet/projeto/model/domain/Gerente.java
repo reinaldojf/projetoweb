@@ -1,5 +1,10 @@
 package br.edu.infnet.projeto.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TGerente")
 public class Gerente extends Empregado {
 	private float gratificacaogerente;
 	private float auxiliogasolina;
@@ -8,6 +13,10 @@ public class Gerente extends Empregado {
 //	private boolean gelada;
 //	private float tamanho;
 //	private String marca;
+
+	public Gerente() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Gerente(String cpf, String nome, float salariobase, float salariofinal) {
 		super(cpf, nome, salariobase, salariofinal);

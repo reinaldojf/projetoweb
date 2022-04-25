@@ -1,10 +1,19 @@
 package br.edu.infnet.projeto.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TAnalista")
 public class Analista extends Empregado {
 	private float auxilioalimentacao;
 	private float auxiliotransporte;
 	private float auxilioescola;
 	
+	public Analista() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Analista(String cpf, String nome, float salariobase, float salariofinal) {
 		super(cpf, nome, salariobase, salariofinal);
 	}

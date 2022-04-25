@@ -1,37 +1,43 @@
 package br.edu.infnet.projeto.model.service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.projeto.model.domain.Gerente;
+import br.edu.infnet.projeto.model.repository.GerenteRepository;
 
 @Service
 public class GerenteService {
 	
-	private static Map<Integer, Gerente> mapa = new HashMap<Integer, Gerente>();
+//	private static Map<Integer, Gerente> mapa = new HashMap<Integer, Gerente>();
+//	
+//	private static Integer key = 1;
 	
-	private static Integer key = 1;
+	@Autowired
+	private GerenteRepository gerenteRepository;
+
 	
 	public Collection<Gerente> obterLista(){
-		return mapa.values();
+//		return mapa.values();
+		return (Collection<Gerente>) gerenteRepository.findAll();
 	}
 	// Incluir
 	public void incluir(Gerente gerente){
-		gerente.setId(key++);
-		mapa.put(gerente.getId(),  gerente);
+//		gerente.setId(key++);
+//		mapa.put(gerente.getId(),  gerente);
+		gerenteRepository.save(gerente);
 	}
 	// Excluir
 	public void excluir(Integer id){
-		mapa.remove(id);
+//		mapa.remove(id);
+		gerenteRepository.deleteById(id);
 	}
 	// ObterPorId
-	public Gerente obterPorId(Integer id){
-		return mapa.get(id);
-	}
+//	public Gerente obterPorId(Integer id){
+////		return mapa.get(id);
+//		gerenteRepository.deleteById(id);
+//	}
 	
 }

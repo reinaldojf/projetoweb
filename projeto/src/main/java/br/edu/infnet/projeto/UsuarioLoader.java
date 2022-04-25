@@ -18,13 +18,18 @@ public class UsuarioLoader implements ApplicationRunner{
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		// 
-		Usuario usuario = new Usuario();
-		usuario.setAdmin(true);
-		usuario.setEmail("reijf@terra.com.br");
-		usuario.setNome("Reinaldo Freitas");
-		usuario.setSenha("123");
-		usuarioService.incluir(usuario);
+		// Para não duplicar o email e senha 
+		String email = "reijf@terra.com.br";
+		String senha = "123";
+		
+		if (usuarioService.validar(email, senha)==null) {
+			Usuario usuario = new Usuario();
+			usuario.setAdmin(true);
+			usuario.setEmail("reijf@terra.com.br");
+			usuario.setNome("Reinaldo Freitas");
+			usuario.setSenha("123");
+			usuarioService.incluir(usuario);
+		}
 	}
 	
 }
