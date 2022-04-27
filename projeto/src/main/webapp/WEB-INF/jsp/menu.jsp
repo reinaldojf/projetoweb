@@ -16,6 +16,7 @@
 				<li><a href="/analistas">Analista</a></li>
 				<li><a href="/clientes">Cliente</a></li>
 				<li><a href="/projetos">Projeto</a></li>
+				<li><a href="/usuarios">Usuário</a></li>
 			</c:if>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
