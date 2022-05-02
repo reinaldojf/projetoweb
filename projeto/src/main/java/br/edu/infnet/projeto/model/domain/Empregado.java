@@ -1,8 +1,8 @@
 package br.edu.infnet.projeto.model.domain;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,6 +29,8 @@ public abstract class Empregado {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
+	@ManyToMany(mappedBy = "empregados")
+	private List<Projeto> projetos;
 
 	public Empregado() {
 		// TODO Auto-generated constructor stub
@@ -75,6 +78,14 @@ public abstract class Empregado {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public List<Projeto> getProjetos() {
+		return projetos;
+	}
+
+	public void setProjetos(List<Projeto> projetos) {
+		this.projetos = projetos;
 	}
 
 	@Override

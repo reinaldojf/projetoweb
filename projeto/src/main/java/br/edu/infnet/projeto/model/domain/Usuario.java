@@ -27,7 +27,16 @@ public class Usuario {
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Empregado> empregados;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Projeto> projetos;
 	
+	public List<Projeto> getProjetos() {
+		return projetos;
+	}
+	public void setProjetos(List<Projeto> projetos) {
+		this.projetos = projetos;
+	}
 	public List<Cliente> getClientes() {
 		return clientes;
 	}
