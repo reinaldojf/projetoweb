@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ProdutoController {
+public class ProdutoController_backup {
 	// produto GET
 	//@RequestMapping(value = "/produto", method = RequestMethod.GET)
 	@GetMapping(value = "/produto")

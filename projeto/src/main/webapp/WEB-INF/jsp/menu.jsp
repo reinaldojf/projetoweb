@@ -11,6 +11,7 @@
 			<li class="active"><a href="#">Home</a></li>
 
 			<c:if test="${not empty usuarioLogado}">
+				<li><a href="/empregados">Empregado</a></li>
 				<li><a href="/diretores">Diretor</a></li>
 				<li><a href="/gerentes">Gerente</a></li>
 				<li><a href="/analistas">Analista</a></li>

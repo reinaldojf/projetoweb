@@ -1,5 +1,8 @@
 package br.edu.infnet.projeto.model.repository;
 
+import java.util.Collection;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -13,4 +16,6 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 	// Se não retornar nada, volta para a classe UsuarioService um valor nulo
 	@Query("from Usuario u where email = :email and senha = :senha")
 	Usuario autenticacao(String email, String senha);
+
+	Collection<Usuario> findAll(Sort by);
 }

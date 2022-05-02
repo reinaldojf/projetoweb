@@ -13,10 +13,6 @@ import br.edu.infnet.projeto.model.repository.DiretorRepository;
 @Service
 public class DiretorService {
 	
-//	private static Map<Integer, Diretor> mapa = new HashMap<Integer, Diretor>();
-//	
-//	private static Integer key = 1;
-	
 	@Autowired
 	private DiretorRepository diretorRepository;
 	
@@ -26,18 +22,10 @@ public class DiretorService {
 	}
 	// Incluir
 	public void incluir(Diretor diretor){
-//		diretor.setId(key++);
-//		mapa.put(diretor.getId(),  diretor);
 		diretorRepository.save(diretor);
 	}
 	// Excluir
 	public void excluir(Integer id){
-//		mapa.remove(id);
 		diretorRepository.deleteById(id);
 	}
-	// ObterPorId
-//	public Diretor obterPorId(Integer id){
-//		return mapa.get(id);
-//	}
-	
 }
