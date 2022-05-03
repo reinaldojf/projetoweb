@@ -26,6 +26,7 @@
 						<th>E-mail</th>
 						<th>Clientes</th>
 						<th>Empregados</th>
+						<th>Projetos</th>
 						<c:if test="${usuarioLogado.admin}">
 							<th></th>
 						</c:if>
@@ -39,6 +40,7 @@
 							<td>${o.email}</td>
 							<td>${o.clientes.size()}</td>
 							<td>${o.empregados.size()}</td>
+							<td>${o.projetos.size()}</td>
 							<c:if test="${usuarioLogado.admin}">
 								<td><a href="/usuario/excluir/${o.id}">Excluir</a></td>
 							</c:if>

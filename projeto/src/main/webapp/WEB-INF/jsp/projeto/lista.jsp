@@ -28,7 +28,8 @@
 						<th>Código</th>
 						<th>Descrição</th>
 						<th>Data início</th>
-						<!--  <th>Cliente</th> -->
+						<th>Empregado</th>
+						<th>Cliente</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -39,7 +40,8 @@
 							<td>${o.codigo}</td>
 							<td>${o.descricao}</td>
 							<td>${o.datainicio}</td>
-							<!-- <td>${o.cliente}</td> -->
+							<td>${o.empregados.size()}</td>
+							<td>${o.cliente.razaosocial}</td>
 							<td><a href="/projeto/excluir/${o.id}">Excluir</a></td>
 						</tr>
 					</c:forEach>

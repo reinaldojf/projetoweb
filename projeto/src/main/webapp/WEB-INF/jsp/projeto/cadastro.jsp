@@ -35,10 +35,26 @@
 					placeholder="Entre com o código do cliente" name="cliente" value="120">
 			</div>
 	  		<div class="mb-3 mt-3">
-				<label>Empregados:</label> <input type="text" class="form-control"
 					placeholder="Entre com os empregados" name="empregados" value="">
 			</div>
 -->
+	  		<div class="mb-3 mt-3">
+				<label>Cliente:</label> 
+				<select name="cliente.id" class="form-control">
+					<c:forEach var="c" items="${clientes}">
+						<option value="${c.id}">${c.razaosocial}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="mb-3 mt-3">
+				<label>Empregados</label>
+				<div class="checkbox">
+					<c:forEach var="e" items="${empregados}">
+						<label><input type="checkbox" value="${e.id}" name="idsEmpregados">${e.nome}</label>
+					</c:forEach>
+				</div>
+			</div>
+
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
